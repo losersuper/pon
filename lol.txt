@@ -1,3 +1,4 @@
+local Tool
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Window = OrionLib:MakeWindow({Name = "Blox Fruit", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -13,14 +14,25 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddDropdown({
-	Name = "Dropdown",
+	Name = "Tool",
 	Default = "Melee",
 	Options = {"Melee", "Sword"},
 	Callback = function(Value)
 		if Value == "Melee" then
-			print("hi")
+			Tool = "Melee"
 		else
-			print("bye")
+			Tool = "Sword"
+		end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Auto Home Point",
+	Default = false,
+	Callback = function(Value)
+		while value do
+			game:GetService("ReplicatedStorage"):WaitForChild("CommF_"):InvokeServer("SetSpawnPoint")
+		wait(2.5)
 		end
 	end    
 })
