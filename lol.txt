@@ -8,6 +8,6 @@ local Farm = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Section = Tab:AddSection({
+local Section = Farm:AddSection({
 	Name = "Section"
 })
