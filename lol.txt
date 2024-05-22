@@ -1,3 +1,13 @@
-local lol = Instance.new("ScreenGui", game.CoreGui)
-local lol = Instance.new("Frame", lol)
-lol.Name = "Fuck"
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Blox Fruit", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
+
+local Farm = Window:MakeTab({
+	Name = "Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Section"
+})
