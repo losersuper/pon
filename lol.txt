@@ -1,1 +1,2 @@
-game.Workspace:Instance.new("Frame")
+local lol = Instance.new("Frame", game.CoreGui)
+lol.Name = "Fuck"
