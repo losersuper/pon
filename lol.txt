@@ -9,5 +9,17 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "Section"
+	Name = "Setting"
+})
+
+Tab:AddDropdown({
+	Name = "Dropdown",
+	Default = "Melee",
+	Options = {"Melee", "Sword"},
+	Callback = function(Value)
+		if Value == "Melee" then
+			print("hi")
+		else
+			print("bye")
+	end    
 })
