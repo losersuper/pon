@@ -1,1 +1,1 @@
-print("hi")
+game.Workspace:Instance.new("Frame")
