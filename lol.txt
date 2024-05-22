@@ -1,2 +1,3 @@
 local lol = Instance.new("ScreenGui", game.CoreGui)
+local lol = Instance.new("Frame", lol)
 lol.Name = "Fuck"
