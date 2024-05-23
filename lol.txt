@@ -27,12 +27,15 @@ Tab:AddDropdown({
 })
 
 Tab:AddToggle({
-	Name = "Auto Home Point",
+	Name = "Auto Buy Legendary Aura",
 	Default = false,
 	Callback = function(Value)
-		while value do
-			game:GetService("ReplicatedStorage"):WaitForChild("CommF_"):InvokeServer("SetSpawnPoint")
-		wait(2.5)
+		while Value do
+			local a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+			if a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
+				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2")
+			end
+			wait(1)
 		end
-	end    
+	end
 })
