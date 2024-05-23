@@ -1,7 +1,6 @@
-while wait() do
-local a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
-end
 local Tool
+local a
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Window = OrionLib:MakeWindow({Name = "Blox Fruit", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -21,26 +20,31 @@ Tab:AddDropdown({
 	Default = "Melee",
 	Options = {"Melee", "Sword"},
 	Callback = function(Value)
-		if Value == "Melee" then
-			Tool = "Melee"
-		else
-			Tool = "Sword"
-		end
+		Tool = Value
 	end    
 })
+
+local autoBuy = false
 
 Tab:AddToggle({
 	Name = "Auto Buy Legendary Aura",
 	Default = false,
 	Callback = function(Value)
-		while wait() do
-			if a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
-				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2")
+		autoBuy = Value
+		if autoBuy then
+			while autoBuy do
+				a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+				if a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
+					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2")
+				end
+				wait(1) -- Small delay to prevent excessive server load
 			end
 		end
 	end
 })
+
 Tab:AddLabel("Label")
+
 Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
