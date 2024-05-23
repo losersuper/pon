@@ -48,6 +48,6 @@ Tab:AddLabel("Label")
 Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
-      		setclipboard(a)
+      		CoolLabel:Set(a)
   	end    
 })
