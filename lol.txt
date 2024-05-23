@@ -40,7 +40,6 @@ Tab:AddToggle({
 	end
 })
 Tab:AddLabel("Label")
-
 Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
