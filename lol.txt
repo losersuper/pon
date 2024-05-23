@@ -43,7 +43,7 @@ Tab:AddToggle({
 	end
 })
 
-Tab:AddLabel("Label")
+local CoolLabel = Tab:AddLabel("Label")
 
 Tab:AddButton({
 	Name = "Button!",
