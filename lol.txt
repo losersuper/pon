@@ -47,3 +47,10 @@ Tab:AddButton({
 		CoolLabel:Set(a)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Console",
+	Callback = function()
+      		game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.F9, false, game)
+  	end    
+})
