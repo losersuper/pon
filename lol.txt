@@ -39,3 +39,7 @@ Tab:AddToggle({
 		end
 	end
 })
+Tab:AddLabel("Label")
+while wait() do
+CoolLabel:Set(a)
+end
