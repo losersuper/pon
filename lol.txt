@@ -43,7 +43,7 @@ Tab:AddLabel("Label")
 Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
-      		print("button pressed")
+      		CoolLabel:Set(a)
   	end    
 })
 --lol
