@@ -1,3 +1,6 @@
+while wait() do
+local a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+end
 local Tool
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
@@ -30,12 +33,10 @@ Tab:AddToggle({
 	Name = "Auto Buy Legendary Aura",
 	Default = false,
 	Callback = function(Value)
-		while Value do
-			local a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+		while wait() do
 			if a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
 				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2")
 			end
-			wait(1)
 		end
 	end
 })
