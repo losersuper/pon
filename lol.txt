@@ -33,9 +33,9 @@ Tab:AddToggle({
 		autoBuy = Value
 		if autoBuy then
 			while autoBuy do
-				a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+				a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", 1)
 				if a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
-					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2")
+					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", 2)
 				end
 				wait(1) -- Small delay to prevent excessive server load
 			end
