@@ -28,11 +28,10 @@ Tab:AddToggle({
 	Name = "Auto Buy Legendary Aura",
 	Default = false,
 	Callback = function(Value)
-	a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
 	_G.ABLA = Value
 		pcall(function()
 			if _G.ABLA and a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
-				repeat game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2") wait() until _G.ABLA == false
+				repeat game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2") a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1") wait() until _G.ABLA == false
 			end
 		end)
 	end
