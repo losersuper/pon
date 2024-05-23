@@ -24,22 +24,17 @@ Tab:AddDropdown({
 	end    
 })
 
-local autoBuy = false
-
 Tab:AddToggle({
 	Name = "Auto Buy Legendary Aura",
 	Default = false,
 	Callback = function(Value)
-		autoBuy = Value
-		if autoBuy then
-			a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
-			while autoBuy do
-				if a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
-					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2")
-				end
-				wait(1) -- Small delay to prevent excessive server load
+	a = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+	_G.ABLA = Value
+		pcall(function()
+			if _G.ABLA and a == "Winter Sky" or a == "Pure Red" or a == "Snow White" then
+				repeat game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "2") wait() until _G.ABLA == false
 			end
-		end
+		end)
 	end
 })
 
