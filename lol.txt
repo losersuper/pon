@@ -40,9 +40,7 @@ Tab:AddToggle({
 	end
 })
 Tab:AddLabel("Label")
-while wait() do
-CoolLabel:Set(a)
-end
+
 Tab:AddButton({
 	Name = "Button!",
 	Callback = function()
